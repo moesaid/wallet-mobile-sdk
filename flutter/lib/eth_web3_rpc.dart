@@ -133,3 +133,15 @@ class SwitchEthereumChain extends Action {
           }),
         );
 }
+
+class RawRequest extends Action {
+  RawRequest({
+    required String method,
+    required Map<String, dynamic> params,
+    bool? optional = false,
+  }) : super(
+          method: method,
+          paramsJson: jsonEncode(params),
+          optional: optional,
+        );
+}
